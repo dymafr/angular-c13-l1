@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
@@ -12,11 +12,15 @@ import { PanierContainerComponent } from "./panier-container/panier-container.co
 import { IngredientListComponent } from "./panier-container/ingredient-list/ingredient-list.component";
 import { RouterModule } from "@angular/router";
 import { APP_ROUTES } from "./app.routes";
-import { PanierService } from './shared/services/panier.service';
-import { CocktailFormComponent } from './cocktail-container/cocktail-form/cocktail-form.component';
+import { PanierService } from "./shared/services/panier.service";
+import { CocktailFormComponent } from "./cocktail-container/cocktail-form/cocktail-form.component";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(APP_ROUTES)],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(APP_ROUTES)
+  ],
   declarations: [
     AppComponent,
     HeaderComponent,
