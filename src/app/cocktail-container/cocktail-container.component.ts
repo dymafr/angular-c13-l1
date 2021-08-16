@@ -9,7 +9,7 @@ import { CocktailService } from "../shared/services/cocktail.service";
   styleUrls: ["./cocktail-container.component.scss"]
 })
 export class CocktailContainerComponent implements OnInit, OnDestroy {
-  public cocktails: Cocktail[];
+  public cocktails?: Cocktail[];
   public subscription: Subscription = new Subscription();
 
   constructor(private cocktailService: CocktailService) {}
