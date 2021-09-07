@@ -10,7 +10,7 @@ import { PanierService } from '../../shared/services/panier.service';
   styleUrls: ['./cocktail-details.component.scss']
 })
 export class CocktailDetailsComponent implements OnInit {
-  public cocktail: Cocktail;
+  public cocktail?: Cocktail;
 
   constructor(
     private panierService: PanierService,
@@ -31,7 +31,9 @@ export class CocktailDetailsComponent implements OnInit {
     });
   }
 
-  public addToPanier() {
-    this.panierService.addPanier(this.cocktail.ingredients);
+  public addToPanier(): void {
+    if (this.cocktail) {
+      this.panierService.addPanier(this.cocktail.ingredients);
+    }
   }
 }
